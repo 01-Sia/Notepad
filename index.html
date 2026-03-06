@@ -2,30 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI Notepad</title>
+  <title>Garden Notepad 🌷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="Icon_icon.png" sizes="192x192">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="Icon_icon.png" type="image/png">
 </head>
 <body>
-  <div class="container">
-    <h2>My To-Do List</h2>
-    <ul id="todo-list"></ul>
-    <div class="input-row">
-      <input id="new-item" placeholder="Add new item..." autocomplete="off" />
-      <button id="mic-btn" title="Speak">🎤</button>
-      <button id="add-btn">Add</button>
+  <header>
+    Garden Notepad 🌷
+  </header>
+  <div id="notepad-container">
+    <img id="garden-vine" src="https://cdn.pixabay.com/photo/2013/07/12/15/58/vine-150400_1280.png" alt="Vine" />
+    <img id="garden-flower" src="https://cdn.pixabay.com/photo/2013/07/12/17/00/rose-149365_1280.png" alt="Flower" />
+    <div id="input-row">
+      <input type="text" id="new-item" placeholder="Write a garden thought...">
+      <button id="mic-btn" title="Voice input">🎤</button>
+      <button id="add-btn" title="Add">➕</button>
     </div>
+    <ul id="todo-list"></ul>
   </div>
+  <footer>
+    🌱 Let your ideas grow! | Made with <span style="color:#e07a5f;">&#10084;</span>
+  </footer>
   <script src="app.js"></script>
-  <!-- Optionally include transformers.js locally for future AI features -->
-  <!-- <script src="transformers.min.js"></script> -->
-  <script>
-25    // Register service worker for offline support
-26 if ('serviceWorker' in navigator) {
-27     navigator.serviceWorker.register('sw.js');
-28    }
-29  </script>
 </body>
 </html>

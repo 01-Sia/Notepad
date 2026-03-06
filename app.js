@@ -4,13 +4,17 @@ let todoList = JSON.parse(localStorage.getItem('todos') || '[]');
 function renderList() {
   const ul = document.getElementById('todo-list');
   ul.innerHTML = '';
+  const gardenEmojis = ["🌱", "🌸", "🌼", "🌻", "🍃"];
   todoList.forEach((item, idx) => {
     const li = document.createElement('li');
+    li.className = 'todo-item' + (item.done ? ' done' : '');
+    const emoji = gardenEmojis[idx % gardenEmojis.length];
     li.innerHTML = `
-10      <input type="checkbox" ${item.done ? 'checked' : ''} data-idx="${idx}">
-11      <span style="text-decoration:${item.done ? 'line-through' : 'none'}">${item.text}</span>
-12      <button data-del="${idx}" title="Delete">❌</button>
-13    `;
+13      <input type="checkbox" ${item.done ? 'checked' : ''} data-idx="${idx}">
+14      <span class="garden-dot">${emoji}</span>
+15      <span class="todo-text">${item.text}</span>
+16      <button data-del="${idx}" class="delete-btn" title="Delete">❌</button>
+17    `;
     ul.appendChild(li);
   });
 }
